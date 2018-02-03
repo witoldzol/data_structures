@@ -44,7 +44,7 @@ public class MyQueue implements QueueInterface {
         }
     };
     
-    public Object front(){
+    public String front(){
         return theQueue.get(0);
     };
 }

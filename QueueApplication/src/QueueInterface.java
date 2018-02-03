@@ -18,7 +18,7 @@ public interface QueueInterface {
     
     public boolean isEmpty();
     
-    public Object front();
+    public String front();
     
     
     

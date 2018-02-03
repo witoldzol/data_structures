@@ -35,6 +35,8 @@ public class MedicalCenterGui extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         out_field = new javax.swing.JTextArea();
+        first_in_queue = new javax.swing.JButton();
+        next_patient = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,6 +54,20 @@ public class MedicalCenterGui extends javax.swing.JFrame {
         out_field.setColumns(20);
         out_field.setRows(5);
         jScrollPane1.setViewportView(out_field);
+
+        first_in_queue.setText("first patient in queue");
+        first_in_queue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                first_in_queueActionPerformed(evt);
+            }
+        });
+
+        next_patient.setText("next patient");
+        next_patient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                next_patientActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,9 +89,16 @@ public class MedicalCenterGui extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(68, 68, 68)
-                .addComponent(getTicketBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(115, 115, 115))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(getTicketBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(first_in_queue)
+                            .addComponent(next_patient, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(141, 141, 141))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,7 +117,12 @@ public class MedicalCenterGui extends javax.swing.JFrame {
                         .addGap(7, 7, 7)
                         .addComponent(getTicketBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(next_patient, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(first_in_queue, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(19, 19, 19))
         );
 
@@ -114,9 +142,11 @@ public class MedicalCenterGui extends javax.swing.JFrame {
             
             if (queue.isEmpty()){
                 out_field.setText( "Your are first in line! Be ready to get probed!! \n" );
+                 queue.enqueue(name);
             }
             else if (queue.size() == 1){
                 out_field.setText( "There is one patient ahead of you \n" );
+                 queue.enqueue(name);
             } else {
                 out_field.setText( "There are  " + queue.size() + " patients ahead of you \n" );
                 queue.enqueue(name);
@@ -124,6 +154,16 @@ public class MedicalCenterGui extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_getTicketBtnActionPerformed
+
+    private void first_in_queueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_first_in_queueActionPerformed
+        out_field.setText( queue.front() );
+        
+    }//GEN-LAST:event_first_in_queueActionPerformed
+
+    private void next_patientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_next_patientActionPerformed
+            queue.dequeue();
+            
+    }//GEN-LAST:event_next_patientActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,11 +201,13 @@ public class MedicalCenterGui extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton first_in_queue;
     private javax.swing.JButton getTicketBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField name_field;
+    private javax.swing.JButton next_patient;
     private javax.swing.JTextArea out_field;
     private javax.swing.JTextField symptom_field;
     // End of variables declaration//GEN-END:variables
