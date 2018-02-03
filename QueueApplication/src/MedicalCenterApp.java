@@ -3,12 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Queue;
 
 /**
  *
  * @author x17143853
  */
-public class QueueApp {
+public class MedicalCenterApp {
+ 
+    public static void main (String[] args){
+        
+        MedicalCenterGui gui = new MedicalCenterGui();
+        gui.setVisible(true);
+
+        
+    }
     
 }
