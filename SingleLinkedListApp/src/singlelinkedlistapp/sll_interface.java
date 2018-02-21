@@ -11,4 +11,20 @@ package singlelinkedlistapp;
  */
 public interface sll_interface {
     
+    public void add(Object ele);
+    
+    public void add(int index, Object ele);
+    
+    public void remove(int index);
+    
+    public void printAll();
+    
+    public void removeAll();
+    
+    public boolean isEmpty();
+    
+    public int size();
+    
+    public Node get(int index);        
+
 }
