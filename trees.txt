@@ -6,13 +6,15 @@ jar, john, james,,mary,jennif,robert,carole
 
 
 in=-order
-(bottom left,bottom right, root)
+(bottom left, root, right,)
 james,john,mary,jared,robert,jennifer,carole
 
 
 post-order
-(bottom left -> root > right side)
+(bottom left -> right side > root)
 
 1.7.5.2.11.12.10
 
 james,mary,john,robert,carole,jennifer,jared
+
+
