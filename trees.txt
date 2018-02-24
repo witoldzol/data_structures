@@ -1,0 +1,18 @@
+pre-order
+(root, left, right)
+
+10.2.1.5.7.12.11
+jar, john, james,,mary,jennif,robert,carole
+
+
+in=-order
+(bottom left,bottom right, root)
+james,john,mary,jared,robert,jennifer,carole
+
+
+post-order
+(bottom left -> root > right side)
+
+1.7.5.2.11.12.10
+
+james,mary,john,robert,carole,jennifer,jared
