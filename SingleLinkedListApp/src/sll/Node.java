@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package singlelinkedlistapp;
+package sll;
 
 /**
  *
@@ -12,28 +12,26 @@ package singlelinkedlistapp;
 public class Node {
     
     //variables
-    Node next;
-    Object ele;
+    private Node next;
+    private Object ele;
     //constructor
-    public Node(Object ele, Node next){
-        this.ele = ele;
-        this.next = next;
+    public Node(Object e, Node n){
+        this.ele = e;
+        next = n;
     }
-    
     //setters
-    public void setEle(Object ele){
-        this.ele = ele;
+    public void setNext(Node n){
+        next = n;
     }
-    public void setNext(Node next){
-        this.next = next;
+    public void setEle(Object e){
+        ele = e;
     }
-    
     //getters
-    public Object getEle(){
-        return ele;
-    }
     public Node getNext(){
         return next;
+    }
+    public Object getEle(){
+        return ele;
     }
     
 }

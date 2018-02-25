@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package singlelinkedlistapp;
+package sll;
 
 /**
  *
@@ -11,11 +11,10 @@ package singlelinkedlistapp;
  */
 public class sllApp {
     
-    
     public static void main(String[] args){
         
         sllGui gui = new sllGui();
         gui.setVisible(true);
-        
     }
+    
 }

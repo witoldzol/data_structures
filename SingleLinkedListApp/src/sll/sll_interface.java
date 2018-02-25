@@ -3,28 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package singlelinkedlistapp;
+package sll;
 
 /**
  *
- * @author x17143853
+ * @author esu
  */
 public interface sll_interface {
     
-    public void add(Object ele);
-    
     public void add(int index, Object ele);
-    
-    public void remove(int index);
-    
-    public void printAll();
-    
-    public void removeAll();
-    
-    public boolean isEmpty();
-    
+    public void add(Object ele);
     public int size();
+    public boolean isEmpty();
+    public void remove(int index);
+    public void remove(Object ele);
+    public void remove();
+    public void removeAll();
+    public void printAll();
+    public Object get(int index);
     
-    public Node get(int index);        
-
 }
