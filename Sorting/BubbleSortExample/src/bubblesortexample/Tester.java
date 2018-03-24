@@ -48,10 +48,8 @@ public class Tester {
         li.simplebubblesort();
         
         System.out.println("And now the simple sort: " );
-        for(String str : li){
-            System.out.println(str);
-            System.out.println("------------------");
-        }
+        
+        System.out.print(li.toString());
 
     }
 
