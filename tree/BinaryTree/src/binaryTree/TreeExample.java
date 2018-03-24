@@ -80,7 +80,7 @@ public class TreeExample {
         System.out.println("In-order Traversal-  The listing of nodes is: ");
         bst.inOrderTraversal(bst.root);
 
-        Node foundNode = bst.search(theNode5.getElement(), bst.root());
+        Node foundNode = bst.search(theNode5.getElement(), bst.root() );
         if (foundNode == null)
             System.out.println("The node "+ theNode5.getElement() +" DOES NOT exist in the tree! ");
         else

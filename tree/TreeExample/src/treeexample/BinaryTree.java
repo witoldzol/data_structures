@@ -35,7 +35,7 @@ public class BinaryTree {
         // if the tree is empty theNewNode becames the root of the tree
         if (theRoot == null )
         {
-            theRoot = theNewNode;
+            theRoot = theNewNode;   
         }
         else 
         // find the location and insert theNewNode in the non-empty tree
